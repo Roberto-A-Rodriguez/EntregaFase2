@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Webpage</title>
+    <!-- Estilos integrados en el archivo HTML -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu, .products {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .product-card {
+            display: inline-block;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .form-container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cosas Bonitas</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#login">Log In</a>
+            <a href="#signup">Sign Up</a>
+        </nav>
+    </header>
+
+    <!-- Menú de productos -->
+    <div class="menu">
+        <h2>Product Categories</h2>
+        <ul>
+            <li>Electronics</li>
+            <li>Fashion</li>
+            <li>Home Appliances</li>
+            <li>Books</li>
+        </ul>
+    </div>
+
+    <!-- Productos destacados -->
+    <div class="products">
+        <h2>Featured Products</h2>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>$20.00</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>$30.00</p>
+        </div>
+    </div>
+
+    <!-- Formulario de inicio de sesión -->
+    <div id="login" class="form-container">
+        <h2>Log In</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <p>Don't have an account? <a href="#signup">Sign up here</a></p>
+    </div>
+
+    <!-- Formulario de creación de cuenta -->
+    <div id="signup" class="form-container">
+        <h2>Create Account</h2>
+        <form id="signup-form">
+            <label for="new-username">Username:</label>
+            <input type="text" id="new-username" required>
+            <label for="new-password">Password:</label>
+            <input type="password" id="new-password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Cosas Bonitas</p>
+    </footer>
+
+    <!-- JavaScript integrado -->
+    <script>
+        // Manejo del formulario de inicio de sesión
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === "admin" && password === "1234") {
+                alert("Login successful!");
+                window.location.href = "#home";
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        });
+
+        // Manejo del formulario de registro
+        document.getElementById('signup-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert("Account created successfully!");
+            window.location.href = "#login";
+        });
+    </script>
+</body>
+</html>
